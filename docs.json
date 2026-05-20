@@ -1,0 +1,163 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Octoparse Docs",
+  "colors": {
+    "primary": "#0D47A1",
+    "light": "#1565C0",
+    "dark": "#0D47A1"
+  },
+  "favicon": "/assets/favicon.svg",
+  "logo": {
+    "light": "/assets/logo-light.svg",
+    "dark": "/assets/logo-dark.svg",
+    "href": "https://octoparse.com"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Platform",
+        "pages": ["en/overview", "en/platform/intro"]
+      },
+      {
+        "group": "Academy",
+        "pages": [
+          "en/academy/intro",
+          "en/academy/what-is-web-scraping",
+          "en/academy/anatomy-of-a-web-scraper",
+          "en/academy/ai-vs-traditional-scraping",
+          "en/academy/is-web-scraping-legal",
+          "en/academy/cloud-web-scraping",
+          "en/academy/lead-generation",
+          "en/academy/browser-fingerprinting",
+          "en/academy/rotating-proxies",
+          "en/academy/scrape-amazon",
+          "en/academy/price-monitoring",
+          "en/academy/scrape-javascript-pages",
+          "en/academy/xpath-css-selectors",
+          "en/academy/human-like-scraping",
+          "en/academy/captcha-and-cloudflare",
+          "en/academy/handle-pagination",
+          "en/academy/headed-vs-headless",
+          "en/academy/ecommerce-data",
+          "en/academy/what-is-ai-web-scraping",
+          "en/academy/what-is-no-code-web-scraping",
+          "en/academy/real-estate-data",
+          "en/academy/social-media-data",
+          "en/academy/web-scraping-vs-crawling",
+          "en/academy/refining-data-with-regex",
+          "en/academy/scrape-linkedin",
+          "en/academy/scrape-google-maps",
+          "en/academy/scrape-yelp",
+          "en/academy/scrape-login-walls",
+          "en/academy/browser-runtime-landscape",
+          "en/academy/scrape-ebay",
+          "en/academy/scrape-walmart",
+          "en/academy/scrape-facebook-marketplace",
+          "en/academy/scrape-instagram",
+          "en/academy/scrape-twitter",
+          "en/academy/scrape-youtube",
+          "en/academy/open-source-vs-cloud-scraping",
+          "en/academy/web-scraping-for-seo",
+          "en/academy/web-scraping-glossary"
+        ]
+      },
+      {
+        "group": "MCP Server",
+        "pages": [
+          "en/mcp/intro",
+          "en/mcp/workflow",
+          "en/mcp/rate-limits",
+          "en/mcp/troubleshooting",
+          "en/mcp/search-templates",
+          "en/mcp/search-tasks",
+          "en/mcp/execute-task",
+          "en/mcp/export-data",
+          "en/mcp/start-or-stop-task",
+          "en/mcp/redeem-coupon"
+        ]
+      },
+      {
+        "group": "OpenAPI & CLI",
+        "pages": [
+          "en/api-reference/intro",
+          "en/api-reference/authentication",
+          {
+            "group": "Access Token",
+            "pages": [
+              "en/api-reference/access-token/obtain-a-new-token",
+              "en/api-reference/access-token/refresh-token"
+            ]
+          },
+          {
+            "group": "Cloud Extraction",
+            "pages": [
+              "en/api-reference/cloud-extraction/start-task",
+              "en/api-reference/cloud-extraction/stop-task",
+              "en/api-reference/cloud-extraction/get-task-status",
+              "en/api-reference/cloud-extraction/get-subtask-status"
+            ]
+          },
+          {
+            "group": "Data",
+            "pages": [
+              "en/api-reference/data/get-non-exported-data",
+              "en/api-reference/data/get-data-by-offset",
+              "en/api-reference/data/mark-data-as-exported"
+            ]
+          },
+          {
+            "group": "Task",
+            "pages": [
+              "en/api-reference/task/search-task",
+              "en/api-reference/task/duplicate-task",
+              "en/api-reference/task/update-task-urls"
+            ]
+          },
+          {
+            "group": "Task Group",
+            "pages": [
+              "en/api-reference/task-group/get-task-group-information"
+            ]
+          },
+          "en/cli/intro"
+        ]
+      },
+      {
+        "group": "Changelog",
+        "pages": ["en/changelog/april-2026"]
+      }
+    ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "API Reference",
+        "href": "https://openapi.octoparse.com"
+      },
+      {
+        "label": "Blog",
+        "href": "https://octoparse.com/blog"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Download",
+      "href": "https://octoparse.com/download"
+    }
+  },
+  "footer": {
+    "socials": {
+      "twitter": "https://twitter.com/octoparse",
+      "github": "https://github.com/octoparse",
+      "linkedin": "https://linkedin.com/company/octoparse"
+    }
+  },
+  "seo": {
+    "metatags": {
+      "og:image": "https://www.octoparse.com/docs/og-image.png",
+      "twitter:card": "summary_large_image"
+    },
+    "indexing": "navigable"
+  }
+}
