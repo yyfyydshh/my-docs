@@ -1,0 +1,19 @@
+---
+title: search_tasks
+description: 列出并搜索已有的 八爪鱼 任务。
+---
+
+按名称或条件列出并搜索你已有的 八爪鱼 任务。
+
+## 参数
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `query` | string | 按任务名称搜索 |
+| `status` | string | 按状态筛选（active、paused、draft） |
+
+## 响应
+
+返回匹配的任务，包含任务 ID、名称、状态、最后运行时间及云端/本地模式。
+
+另请参阅：[MCP 概览](/zh/mcp/index)、[MCP 工作流程](/zh/mcp/workflow)

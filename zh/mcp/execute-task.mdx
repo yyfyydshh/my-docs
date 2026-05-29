@@ -1,0 +1,21 @@
+---
+title: execute_task
+description: 运行采集模板并获取结果。
+---
+
+运行采集模板并获取结果。任务在 八爪鱼 云端服务器上执行。
+
+## 参数
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `templateId` | string | 要运行的模板 ID |
+| `inputs` | object | 模板特定的输入参数 |
+| `waitForCompletion` | boolean | 是否等待结果返回（默认：true） |
+| `timeout` | number | 最大等待时间（毫秒） |
+
+## 响应
+
+以 JSON 数组或 CSV 字符串格式返回提取的数据。
+
+另请参阅：[MCP 概览](/zh/mcp/index)、[MCP 工作流程](/zh/mcp/workflow)

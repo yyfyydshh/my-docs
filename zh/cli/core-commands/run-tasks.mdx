@@ -1,0 +1,87 @@
+---
+title: 运行采集任务
+description: 使用 octopus run 本地运行，或 octopus cloud start 在云端运行八爪鱼采集任务。
+---
+
+> 在你自己的电脑上跑，或交给八爪鱼云端执行。
+
+## `octopus run`（在本地运行采集任务）
+
+**什么意思？** 在你自己的电脑上启动本地采集。CLI 会使用独立 Chrome 执行采集，你可以实时看到浏览器窗口（除非使用 `--headless`）。
+
+**基本用法：**
+
+```bash
+octopus run <taskId>
+```
+
+**常用选项：**
+
+```bash
+# 无头模式（不显示浏览器窗口）
+octopus run <taskId> --headless
+
+# 采集满 N 行后停止（调试时推荐）
+octopus run <taskId> --max-rows 100
+
+# 后台运行，之后用 local 子命令管理
+octopus run <taskId> --detach
+
+# 指定本地运行产物目录
+octopus run <taskId> --output ./runs
+```
+
+使用 `--detach` 时，命令行窗口可以关闭，任务会继续在后台运行。之后用 `octopus local status <taskId>` 查看进度。
+
+<Warning>
+  **坑点：`runtime.extension.not_registered` 错误**
+
+  若出现 `runtime.extension.not_registered Extension did not register within 15000ms`，常见原因包括：网络不佳导致 CLI 自动下载浏览器扩展失败、Chrome 版本过旧、或电脑资源不足。
+
+  **处理步骤：**
+  1. 运行 `octopus doctor`，检查输出中是否有 `ok: false` 的项
+  2. 根据提示修复 Chrome、引擎或浏览器依赖
+  3. 重新运行任务，例如：`octopus run <taskId> --max-rows 10`
+</Warning>
+
+## `octopus cloud start`（在云端运行采集任务）
+
+**什么意思？** 让八爪鱼的服务器帮你跑采集任务，数据存储在八爪鱼云端，无需本地 Chrome 一直运行。
+
+**基本用法：**
+
+```bash
+octopus cloud start <taskId>
+```
+
+**查看与控制云端任务：**
+
+```bash
+octopus cloud status <taskId>
+octopus cloud history <taskId>
+octopus cloud stop <taskId>
+```
+
+## 本地运行 vs 云端运行，怎么选？
+
+| 场景 | 推荐方式 | 原因 |
+| --- | --- | --- |
+| 调试、测试 | 本地运行（`octopus run`） | 能实时看到浏览器，方便排查 |
+| 采集数据量小 | 本地运行 | 不额外占用云端资源，使用自己的网络 |
+| 采集数据量大 | 云端运行（`octopus cloud start`） | 八爪鱼服务器更稳定、更快 |
+| 需要每天自动跑 | 云端运行 | 不需要你的电脑一直开机 |
+
+<Note>
+  本地运行状态**仅由 CLI 维护**，与桌面客户端中的任务状态**不同步**。
+</Note>
+
+## 下一步
+
+<CardGroup cols={2}>
+  <Card title="导出数据" icon="download" href="/zh/cli/core-commands/export-data">
+    将采集结果导出为文件。
+  </Card>
+  <Card title="任务管理" icon="list" href="/zh/cli/core-commands/task-management">
+    返回任务管理命令说明。
+  </Card>
+</CardGroup>

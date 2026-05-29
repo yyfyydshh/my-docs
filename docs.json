@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Octoparse Docs",
+  "name": "八爪鱼文档",
   "colors": {
     "primary": "#0D47A1",
     "light": "#1565C0",
     "dark": "#0D47A1"
   },
-  "favicon": "/assets/favicon.svg",
+  "favicon": "/assets/favicons/favicon.ico",
   "logo": {
     "light": "/assets/logo.png",
     "dark": "/assets/logo.png"
@@ -15,64 +15,68 @@
   "navigation": {
     "languages": [
       {
-        "language": "cn",
+        "language": "zh",
         "default": true,
         "hidden": true,
         "tabs": [
       {
         "tab": "首页",
         "pages": [
-          "en/overview",
-          "en/platform/intro"
+          "zh/overview"
         ]
       },
       {
-        "tab": "MCP 服务端",
+        "tab": "MCP 服务",
         "groups": [
           {
             "group": "概述",
             "pages": [
-              "en/mcp/index"
+              "zh/mcp/index"
             ]
           },
           {
             "group": "快速入门",
             "pages": [
-              "en/mcp/quick-start/api-key",
-              "en/mcp/workflow"
-            ]
-          },
-          {
-            "group": "平台对接",
-            "pages": [
-              "en/mcp/integrations/coze",
-              "en/mcp/integrations/dify",
-              "en/mcp/integrations/qclaw",
-              "en/mcp/integrations/wecom"
+              "zh/mcp/quick-start/api-key",
+              "zh/mcp/workflow"
             ]
           },
           {
             "group": "客户端配置",
             "pages": [
-              "en/mcp/guides/clients"
+              "zh/mcp/guides/clients"
+            ]
+          },
+          {
+            "group": "平台对接",
+            "pages": [
+              "zh/mcp/integrations/coze",
+              "zh/mcp/integrations/dify",
+              "zh/mcp/integrations/qclaw",
+              "zh/mcp/integrations/chatgpt",
+              "zh/mcp/integrations/claude",
+              "zh/mcp/integrations/openclaw",
+              "zh/mcp/integrations/cursor",
+              "zh/mcp/integrations/vscode",
+              "zh/mcp/integrations/gemini"
             ]
           },
           {
             "group": "工具参考",
             "pages": [
-              "en/mcp/search-templates",
-              "en/mcp/search-tasks",
-              "en/mcp/execute-task",
-              "en/mcp/export-data",
-              "en/mcp/start-or-stop-task",
-              "en/mcp/redeem-coupon"
+              "zh/mcp/search-templates",
+              "zh/mcp/search-tasks",
+              "zh/mcp/execute-task",
+              "zh/mcp/export-data",
+              "zh/mcp/start-or-stop-task",
+              "zh/mcp/redeem-coupon"
             ]
           },
           {
             "group": "参考",
             "pages": [
-              "en/mcp/rate-limits",
-              "en/mcp/troubleshooting"
+              "zh/mcp/rate-limits",
+              "zh/mcp/troubleshooting"
             ]
           }
         ]
@@ -83,72 +87,72 @@
           {
             "group": "综述",
             "pages": [
-              "en/api-reference/intro"
+              "zh/api-reference/intro"
             ]
           },
           {
             "group": "接口调用凭证",
             "pages": [
-              "en/api-reference/access-token/obtain-a-new-token",
-              "en/api-reference/access-token/refresh-token"
+              "zh/api-reference/access-token/obtain-a-new-token",
+              "zh/api-reference/access-token/refresh-token"
             ]
           },
           {
             "group": "任务组",
             "pages": [
-              "en/api-reference/task-group/get-task-group-information",
-              "en/api-reference/task-group/delete-groups"
+              "zh/api-reference/task-group/get-task-group-information",
+              "zh/api-reference/task-group/delete-groups"
             ]
           },
           {
             "group": "任务",
             "pages": [
-              "en/api-reference/task/search-task",
-              "en/api-reference/task/duplicate-task",
-              "en/api-reference/task/copy-tasks",
-              "en/api-reference/task/move-task",
-              "en/api-reference/task/delete-tasks",
-              "en/api-reference/task/get-actions",
-              "en/api-reference/task/update-task-parameters",
-              "en/api-reference/task/update-loop-items",
-              "en/api-reference/task/update-action-properties",
-              "en/api-reference/task/update-task-urls"
+              "zh/api-reference/task/search-task",
+              "zh/api-reference/task/duplicate-task",
+              "zh/api-reference/task/copy-tasks",
+              "zh/api-reference/task/move-task",
+              "zh/api-reference/task/delete-tasks",
+              "zh/api-reference/task/get-actions",
+              "zh/api-reference/task/update-task-parameters",
+              "zh/api-reference/task/update-loop-items",
+              "zh/api-reference/task/update-action-properties",
+              "zh/api-reference/task/update-task-urls"
             ]
           },
           {
             "group": "云采集",
             "pages": [
-              "en/api-reference/cloud-extraction/start-task",
-              "en/api-reference/cloud-extraction/stop-task",
-              "en/api-reference/cloud-extraction/start-subtasks",
-              "en/api-reference/cloud-extraction/stop-subtasks",
-              "en/api-reference/cloud-extraction/get-task-stats",
-              "en/api-reference/cloud-extraction/get-task-status",
-              "en/api-reference/cloud-extraction/get-statuses",
-              "en/api-reference/cloud-extraction/get-statuses-v2",
-              "en/api-reference/cloud-extraction/get-subtask-status"
+              "zh/api-reference/cloud-extraction/start-task",
+              "zh/api-reference/cloud-extraction/stop-task",
+              "zh/api-reference/cloud-extraction/start-subtasks",
+              "zh/api-reference/cloud-extraction/stop-subtasks",
+              "zh/api-reference/cloud-extraction/get-task-stats",
+              "zh/api-reference/cloud-extraction/get-task-status",
+              "zh/api-reference/cloud-extraction/get-statuses",
+              "zh/api-reference/cloud-extraction/get-statuses-v2",
+              "zh/api-reference/cloud-extraction/get-subtask-status"
             ]
           },
           {
             "group": "任务分析",
             "pages": [
-              "en/api-reference/task-analytics/query-task-analytics"
+              "zh/api-reference/task-analytics/query-task-analytics"
             ]
           },
           {
             "group": "数据",
             "pages": [
-              "en/api-reference/data/get-non-exported-data",
-              "en/api-reference/data/mark-data-as-exported",
-              "en/api-reference/data/get-data-by-offset",
-              "en/api-reference/data/remove-data",
-              "en/api-reference/data/get-batch-data"
+              "zh/api-reference/data/get-non-exported-data",
+              "zh/api-reference/data/mark-data-as-exported",
+              "zh/api-reference/data/get-data-by-offset",
+              "zh/api-reference/data/remove-data",
+              "zh/api-reference/data/get-batch-data"
             ]
           },
           {
             "group": "参考",
             "pages": [
-              "en/api-reference/reference"
+              "zh/api-reference/reference"
             ]
           }
         ]
@@ -159,22 +163,31 @@
           {
             "group": "概述",
             "pages": [
-              "en/cli/index"
+              "zh/cli/index"
             ]
           },
           {
             "group": "快速入门",
             "pages": [
-              "en/cli/quick-start/installation",
-              "en/cli/quick-start/get-api-key-and-log-in",
-              "en/cli/quick-start/run-your-first-task"
+              "zh/cli/quick-start/installation",
+              "zh/cli/quick-start/get-api-key-and-log-in",
+              "zh/cli/quick-start/run-your-first-task"
+            ]
+          },
+          {
+            "group": "CLI核心命令详解",
+            "pages": [
+              "zh/cli/core-commands/task-management",
+              "zh/cli/core-commands/run-tasks",
+              "zh/cli/core-commands/export-data",
+              "zh/cli/core-commands/diagnostics"
             ]
           },
           {
             "group": "参考",
             "pages": [
-              "en/cli/reference/command-cheatsheet",
-              "en/cli/reference/output-and-exit-codes"
+              "zh/cli/reference/command-cheatsheet",
+              "zh/cli/reference/output-and-exit-codes"
             ]
           }
         ]
@@ -182,8 +195,8 @@
       {
         "tab": "更新日志",
         "pages": [
-          "en/changelog/may-2026",
-          "en/changelog/april-2026"
+          "zh/changelog/may-2026",
+          "zh/changelog/april-2026"
         ]
       }
         ]
@@ -192,19 +205,32 @@
   },
   "redirects": [
     {
-      "source": "/en/mcp/intro",
-      "destination": "/en/mcp/index"
+      "source": "/favicons/:path*",
+      "destination": "/assets/favicons/:path*"
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/zh/:path*"
+    },
+    {
+      "source": "/zh/platform/intro",
+      "destination": "/zh/overview"
+    },
+    {
+      "source": "/zh/mcp/intro",
+      "destination": "/zh/mcp/index"
+    },
+    {
+      "source": "/zh/cli/quick-start",
+      "destination": "/zh/cli/quick-start/installation"
+    },
+    {
+      "source": "/zh/cli/core-commands",
+      "destination": "/zh/cli/core-commands/task-management"
     }
   ],
-  "footer": {
-    "socials": {
-      "twitter": "https://twitter.com/octoparse",
-      "github": "https://github.com/octoparse",
-      "linkedin": "https://linkedin.com/company/octoparse"
-    }
-  },
   "api": {
-    "openapi": "en/api-reference/task-analytics/openapi.json",
+    "openapi": "zh/api-reference/task-analytics/openapi.json",
     "mdx": {
       "server": "https://openapi.bazhuayu.com"
     },
@@ -236,8 +262,10 @@
   },
   "seo": {
     "metatags": {
-      "og:image": "https://www.octoparse.com/docs/og-image.png",
-      "twitter:card": "summary_large_image"
+      "og:image": "https://yyfyyds.mintlify.app/assets/og-image.png",
+      "twitter:image": "https://yyfyyds.mintlify.app/assets/og-image.png",
+      "twitter:card": "summary_large_image",
+      "apple-mobile-web-app-title": "八爪鱼文档"
     },
     "indexing": "navigable"
   }

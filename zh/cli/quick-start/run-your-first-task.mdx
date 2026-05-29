@@ -1,0 +1,130 @@
+---
+title: 运行第一个任务
+description: 列出八爪鱼任务、查看详情、本地或云端运行，并导出采集数据。
+---
+
+> 按「查找任务 → 查看详情 → 运行 → 监控 → 导出」完成一次完整采集流程。
+
+开始前请已完成 [安装](/zh/cli/quick-start/installation) 与 [登录](/zh/cli/quick-start/get-api-key-and-log-in)。
+
+## 列出任务
+
+```bash
+octopus task list
+```
+
+分页与搜索：
+
+```bash
+octopus task list --page 2 --page-size 20
+octopus task list --limit 10
+octopus task list --keyword 新闻 --page 1 --page-size 10
+```
+
+脚本 / 自动化建议使用 JSON 输出：
+
+```bash
+octopus task list --json
+```
+
+从结果中记下 **任务 ID**（`taskId`），后续命令均需使用该 ID。
+
+## 查看与校验任务
+
+```bash
+octopus task inspect <taskId>
+```
+
+查看任务定义、输出字段名等元数据。
+
+运行前可校验是否兼容当前 CLI 运行时：
+
+```bash
+octopus task validate <taskId>
+```
+
+若校验失败，请在八爪鱼桌面客户端中更新任务后重试，或联系技术支持并提供 `requestId`（若来自 API 调用）。
+
+## 本地运行任务
+
+```bash
+octopus run <taskId>
+```
+
+常用选项：
+
+```bash
+# 无头模式（不显示浏览器窗口）
+octopus run <taskId> --headless
+
+# 采集满 N 行后停止
+octopus run <taskId> --max-rows 100
+
+# 后台运行，之后用 local 子命令管理
+octopus run <taskId> --detach
+
+# 指定本地运行产物目录（导出时需使用相同路径）
+octopus run <taskId> --output ./runs
+```
+
+### 管理本地运行
+
+```bash
+octopus local status <taskId>
+octopus local pause <taskId>
+octopus local resume <taskId>
+octopus local stop <taskId>
+octopus local history <taskId>
+octopus local cleanup
+```
+
+<Note>
+  本地运行状态**仅由 CLI 维护**，与桌面客户端中的任务状态**不同步**。
+</Note>
+
+`local cleanup` 用于清理过期的本地状态与临时文件，**不会**停止正在运行的任务。
+
+## 云端运行任务
+
+```bash
+octopus cloud start <taskId>
+octopus cloud status <taskId>
+octopus cloud history <taskId>
+octopus cloud stop <taskId>
+```
+
+云采集通过八爪鱼云端资源执行，适合无需本地 Chrome 的场景。
+
+## 导出数据
+
+```bash
+# 导出本地结果为 Excel
+octopus data export <taskId> --source local --format xlsx
+
+# 导出云端结果为 CSV
+octopus data export <taskId> --source cloud --format csv
+
+# 指定输出文件
+octopus data export <taskId> --source local --format csv --file ./result.csv
+```
+
+若本地运行时使用了 `--output ./runs`，导出与查看历史时需保持一致：
+
+```bash
+octopus run <taskId> --output ./runs
+octopus data history <taskId> --source local --output ./runs
+octopus data export <taskId> --source local --output ./runs --format xlsx
+```
+
+支持格式：`xlsx`、`csv`、`html`、`json`、`xml`。
+
+## 下一步
+
+<CardGroup cols={2}>
+  <Card title="命令速查表" href="/zh/cli/reference/command-cheatsheet">
+    全部命令快速查阅。
+  </Card>
+  <Card title="输出与退出码" href="/zh/cli/reference/output-and-exit-codes">
+    在脚本与 CI 中使用 `--json` / `--jsonl` 与退出码。
+  </Card>
+</CardGroup>

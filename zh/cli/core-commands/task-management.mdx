@@ -1,0 +1,65 @@
+---
+title: 任务管理
+description: 使用 octopus task list 与 task inspect 查找、查看八爪鱼采集任务。
+---
+
+> 查找任务、查看详情，获取后续运行与导出所需的 taskId。
+
+## `octopus task list`（查看你有哪些采集任务）
+
+**什么意思？** 列出你在八爪鱼账号下的所有采集任务，并显示每个任务的 **任务 ID**（`taskId`）。后续 `run`、`cloud start`、`data export` 等命令都需要用到这个 ID。
+
+**基本用法：**
+
+```bash
+octopus task list
+```
+
+**常用选项：**
+
+```bash
+# 按关键词搜索任务
+octopus task list --keyword 小红书
+
+# 分页查看（第 2 页，每页 20 条）
+octopus task list --page 2 --page-size 20
+
+# 只显示前 10 条
+octopus task list --limit 10
+
+# 输出 JSON（适合脚本处理）
+octopus task list --json
+```
+
+从输出中找到目标任务，记下 **taskId**，供后续命令使用。
+
+## `octopus task inspect`（查看某个任务的详细信息）
+
+**什么意思？** 查看某个任务的详细配置，包括任务名称、输出字段、运行方式等。运行前建议先 inspect，确认任务是否兼容当前 CLI。
+
+**基本用法：**
+
+```bash
+octopus task inspect <taskId>
+```
+
+**重点关注 `runOnLabel` 字段：**
+
+| 显示值 | 含义 | 应使用的命令 |
+| --- | --- | --- |
+| 云端和本地 | 两种运行方式均可 | `octopus run` 或 `octopus cloud start` |
+| 仅云端 | 只能用云端运行 | `octopus cloud start` |
+| 仅本地 | 只能用本地运行 | `octopus run` |
+
+运行前还可用 `octopus task validate <taskId>` 校验任务是否兼容当前 CLI 运行时。
+
+## 下一步
+
+<CardGroup cols={2}>
+  <Card title="运行采集任务" icon="play" href="/zh/cli/core-commands/run-tasks">
+    本地或云端运行任务。
+  </Card>
+  <Card title="命令速查表" icon="book" href="/zh/cli/reference/command-cheatsheet">
+    全部常用命令一览。
+  </Card>
+</CardGroup>
